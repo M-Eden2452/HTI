@@ -59,10 +59,34 @@ function offset(el) {
 	  
 // 	  span.className = 'last-symbol';
 // 	  shadow.append(span);
-// 	}
+// 	}  
   
 // 	input.addEventListener('scroll', onscroll)
 // 	input.addEventListener('input', oninput)
 //   }
   
 //   init(document.querySelector('.input'), document.querySelector('.input-shadow'));
+
+document.addEventListener("DOMContentLoaded", () => {
+	const link = document.getElementById('link');
+	console.log(link);
+
+	link.onclick = function () {
+		document.querySelector('.main-description').classList.toggle('red');
+	}
+
+
+	window.addEventListener('scroll', function(){
+		console.log(pageYOffset);
+
+		if(pageYOffset > 150) {
+			document.querySelector('.main-title').classList.add('scrolled');
+		}
+		else {
+			document.querySelector('.main-title').classList.remove('scrolled');
+		}
+	});
+});
+
+
+ 
